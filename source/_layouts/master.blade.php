@@ -42,13 +42,6 @@
     @endif
 
     <link rel="stylesheet" href="{{ mix('css/app.css', 'assets/build') }}">
-
-    <style>
-        .container {
-            max-width: 960px;
-        }
-    </style>
-
 </head>
 
 
@@ -83,7 +76,7 @@
     <div class="container">
 
         <div class="d-flex align-items-center mb-3">
-            <a href="#" class="d-inline-block mx-auto">
+            <a href="https://github.com/cagilo/cagilo" target="_blank" class="d-inline-block mx-auto">
                 <img src="/assets/img/github.svg">
             </a>
         </div>

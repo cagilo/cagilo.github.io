@@ -6,7 +6,7 @@ section: content
 
 # Device
 
-Easily hide or show content depending on the user's device.
+The `device` component provides a simple ability to hide or show depending on the user's device based on the User-Agent request.
 
 ## Basic Usage
 

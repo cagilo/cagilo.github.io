@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="Configure Algolia DocSearch with the Jigsaw docs starter template">
+
+    <meta property="og:site_name" content="Cagilo UI"/>
+    <meta property="og:title" content="Algolia DocSearch | Cagilo UI"/>
+    <meta property="og:description" content="Configure Algolia DocSearch with the Jigsaw docs starter template"/>
+    <meta property="og:url" content="https://cagilo.github.io/docs/alert"/>
+    <meta property="og:image" content="/assets/img/logo.png"/>
+    <meta property="og:type" content="website"/>
+
+    <link rel="canonical" href="https://cagilo.github.io/docs/alert">
+
+    <meta name="twitter:image:alt" content="Cagilo UI">
+    <meta name="twitter:card" content="summary_large_image">
+
+    
+    <title>Algolia DocSearch | Cagilo UI</title>
+
+    <link rel="home" href="https://cagilo.github.io">
+    <link rel="icon" href="/favicon.ico">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="theme-color" content="#ffffff">
+
+    
+        <!-- Insert analytics code here -->
+    
+    <link rel="stylesheet" href="/assets/build/css/app.css?id=028ae304054932ffa5e9">
+
+    <style>
+        .container {
+            max-width: 960px;
+        }
+    </style>
+
+</head>
+
+
+<body class="d-flex flex-column h-100">
+
+
+<section class="position-relative">
+    <div class="container">
+        <header class="d-flex justify-content-center py-3">
+            <ul class="nav nav-pills fw-bolder">
+                                    <li class="nav-item mx-auto">
+                        <a href="/" class="nav-link link-secondary ">
+                            Home
+                        </a>
+                    </li>
+                                    <li class="nav-item mx-auto">
+                        <a href="/docs/installation" class="nav-link link-secondary ">
+                            Installation
+                        </a>
+                    </li>
+                                    <li class="nav-item mx-auto">
+                        <a href="/docs/alert" class="nav-link link-secondary text-gradient">
+                            Alert
+                        </a>
+                    </li>
+                                    <li class="nav-item mx-auto">
+                        <a href="/docs/device" class="nav-link link-secondary ">
+                            Device
+                        </a>
+                    </li>
+                                    <li class="nav-item mx-auto">
+                        <a href="/docs/error" class="nav-link link-secondary ">
+                            Error
+                        </a>
+                    </li>
+                                    <li class="nav-item mx-auto">
+                        <a href="/docs/logout" class="nav-link link-secondary ">
+                            Logout
+                        </a>
+                    </li>
+                                    <li class="nav-item mx-auto">
+                        <a href="/docs/meta" class="nav-link link-secondary ">
+                            Meta
+                        </a>
+                    </li>
+                            </ul>
+        </header>
+    </div>
+
+    <div class="position-absolute d-none d-lg-block d-none d-lg-block end-0 top-0">
+        <img src="/assets/img/top.svg">
+    </div>
+</section>
+
+
+    <section class="position-relative">
+        <div class="container">
+
+            <main class="content py-5">
+                <h1>Alert</h1>
+
+<p>The <code>alert</code> component provides an easy integration with <a href="https://laravel.com/docs/session#flash-data">Laravel's session flashing</a>. By flashing messages to session from the backend, the alert component picks them up and displays them in your Blade views. You can combine multiple types of messages, display multiple messages at once and compose styling per alert type.</p>
+
+<h2>Displaying Alerts</h2>
+
+<p>The most basic usage of the <code>alert</code> component is to first flash a message to the <code>alert</code> key:</p>
+
+<pre><code class="language-php">session()-&gt;flash('alert', 'Settings saved successfully.');
+</code></pre>
+
+<p>And then, use the component to display it in your Blade view:</p>
+
+<pre><code class="language-html">&lt;x-alert class="alert alert-success" /&gt;
+</code></pre>
+
+<p>This will output the following HTML:</p>
+
+<pre><code class="language-html">&lt;div role="alert" class="alert alert-success"&gt;
+    Settings saved successfully.
+&lt;/div&gt;
+</code></pre>
+
+<h2>Using Multiple Types</h2>
+
+<p>You can also flash different types of messages using specific session keys. Let's flash some messages to the session:</p>
+
+<pre><code class="language-php">session()-&gt;flash('success', 'Settings saved successfully.');
+session()-&gt;flash('warning', 'Please confirm your email address.');
+session()-&gt;flash('danger', 'Passwords do not match.');
+</code></pre>
+
+<p>Reference the different types using the <code>type</code> attribute on the <code>alert</code> component:</p>
+
+<pre><code class="language-html">&lt;x-alert type="success" class="alert alert-success" /&gt;
+&lt;x-alert type="warning" class="alert alert-warning" /&gt;
+&lt;x-alert type="danger" class="alert alert-danger" /&gt;
+</code></pre>
+
+<p>These will then render all the flashed messages.</p>
+
+<h2>Composing The Content</h2>
+
+<p>If you'd like to compose how the content is rendered within the component you can make use of its slot. This is useful, for example, for adding functionality like icons or dismiss elements. You can control the position of where the message will be placed by using the component's <code>message</code> method:</p>
+
+<pre><code class="language-html">&lt;x-alert class="alert alert-success"&gt;
+    &lt;strong&gt;Note:&lt;/strong&gt;
+    {{ $component-&gt;message() }}
+&lt;/x-alert&gt;
+</code></pre>
+
+<p>This will output the following HTML:</p>
+
+<pre><code class="language-html">&lt;div role="alert" class="alert alert-success"&gt;
+    &lt;strong&gt;Note:&lt;/strong&gt;
+    Settings saved successfully.
+&lt;/div&gt;
+</code></pre>
+
+<h2>Displaying Multiple Messages</h2>
+
+<p>You can also opt to display multiple flashed messages for a specific alert type. Let's flash some messages to the session first:</p>
+
+<pre><code class="language-php">session()-&gt;flash('danger', [
+    'Biography is too long.',
+    'Passwords do not match.',
+]);
+</code></pre>
+
+<p>We can then make use of the component's slot to render a list of messages. The <code>messages</code> method gives us access to all the messages from a specific type:</p>
+
+<pre><code class="language-html">&lt;x-alert type="danger" class="alert alert-danger"&gt;
+    &lt;ul&gt;
+        @foreach ($component-&gt;messages() as $message)
+            &lt;li&gt;{{ $message }}&lt;/li&gt;
+        @endforeach
+    &lt;/ul&gt;
+&lt;/x-alert&gt;
+</code></pre>
+
+<p>You can still choose to just display a single message from a list of messages by using a non-slotted component:</p>
+
+<pre><code class="language-html">&lt;x-alert type="danger" class="alert alert-danger" /&gt;
+</code></pre>
+
+<p>By default, using this approach will display the first message from a specific alert type.</p>
+
+<h2>Composing Multiple Types</h2>
+
+<p>When you use multiple types of messages but still want to compose the look and feel of the content you can do so. Using the code snippet from below we can differentiate the content based on an alert's <code>$type</code>:</p>
+
+<pre><code class="language-html">@foreach (['success', 'warning', 'danger'] as $type)
+    &lt;x-alert :type="$type" class="alert alert-{{$type}}"&gt;
+        @if ($type === 'warning')
+          &lt;strong&gt;Note warning:&lt;/strong&gt;
+        @elseif ($type === 'danger')
+          &lt;strong&gt;Note danger:&lt;/strong&gt;
+        @else
+          &lt;strong&gt;Note success:&lt;/strong&gt;
+        @endif
+
+        {{ $component-&gt;message() }}
+    &lt;/x-alert&gt;
+@endforeach
+</code></pre>
+            </main>
+
+
+            <div class="position-absolute d-none d-lg-block start-0 bottom-0">
+                <img src="/assets/img/left.svg">
+            </div>
+        </div>
+    </section>
+
+
+<footer class="footer mt-auto py-3">
+    <div class="container">
+
+        <div class="d-flex align-items-center mb-3">
+            <a href="#" class="d-inline-block mx-auto">
+                <img src="/assets/img/github.svg">
+            </a>
+        </div>
+
+        <p class="text-center text-secondary fw-bolder">
+            © 2021 <span class="text-gradient">Cagilo</span> by <span class="text-gradient">Alexandr Chernyaev</span>
+        </p>
+    </div>
+</footer>
+
+
+<script src="/assets/build/js/main.js?id=2b7ef31469cddae4e70a"></script>
+</body>
+
+</html>

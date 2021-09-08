@@ -27,6 +27,13 @@ After that, we can call the component in our blade templates:
 <x-icon path="fa.home" />
 ```
 
+This will output the following HTML:
+
+```html
+<svg width="1em" height="1em" role="img" fill="currentColor">...</svg>
+```
+
+
 If you use one or two sets of icons that do not repeat, then it is not necessary to specify a prefix in the component:
 
 ```html
@@ -41,4 +48,10 @@ You can also list some attributes that should be applied to your icon:
     class="icon-big" 
     width="2em" 
     height="2em" />
+```
+
+This will output the following HTML:
+
+```html
+<svg class="icon-big" width="2em" height="2em" role="img" fill="currentColor">...</svg>
 ```

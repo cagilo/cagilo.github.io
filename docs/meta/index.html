@@ -103,7 +103,7 @@
 
 <p>The most basic usage of the component requires setting three attributes, <code>title</code>, <code>description</code>, and <code>image</code>:</p>
 
-<pre><code class="language-html">&lt;x-social-meta
+<pre><code class="language-html">&lt;x-meta
     title="Hello World"
     description="Blade components are awesome!"
     image="http://example.com/social.jpg"
@@ -112,14 +112,27 @@
 
 <p>This will output the following HTML:</p>
 
-<pre><code class="language-html">&lt;meta name="twitter:card" content="summary_large_image" /&gt;
-&lt;meta property="og:type" content="website"&gt;
-&lt;meta property="og:title" content="Hello World" /&gt;
+<pre><code class="language-html">&lt;title&gt;Hello World&lt;/title&gt;
+
+@
+&lt;meta name="title" content="Hello World"&gt;
 &lt;meta name="description" content="Blade components are awesome!"&gt;
+
+
+@
+&lt;meta property="og:type" content="website"&gt;
+&lt;meta property="og:url" content="http://localhost"/&gt;
+&lt;meta property="og:locale" content="en"/&gt;
+&lt;meta property="og:title" content="Hello World"/&gt;
 &lt;meta property="og:description" content="Blade components are awesome!"&gt;
-&lt;meta property="og:image" content="http://example.com/social.jpg" /&gt;
-&lt;meta property="og:url" content="http://localhost" /&gt;
-&lt;meta property="og:locale" content="en" /&gt;
+&lt;meta property="og:image" content="http://example.com/social.jpg"&gt;
+
+@
+&lt;meta name="twitter:card" content="summary_large_image"/&gt;
+&lt;meta name="twitter:url" content="http://localhost"&gt;
+&lt;meta name="twitter:title" content="Hello World"&gt;
+&lt;meta name="twitter:description" content="Blade components are awesome!"&gt;
+&lt;meta name="twitter:image" content="http://example.com/social.jpg"&gt;
 </code></pre>
 
 <p>As you can see several <code>og</code> and <code>meta</code> elements are set. Some are set automatically. The <code>og:url</code> will make use of the current page url unless you explicitely pass an url with the <code>url</code> attribute. The <code>og:locale</code> will make use of the app's locale. By default, <code>og:type</code> will be set at <code>website</code> but you can pass in another value if you like through the <code>type</code> attribute.</p>

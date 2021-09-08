@@ -2,7 +2,7 @@
 
 This is the repository for website at [cagilo.github.io](https://cagilo.github.io).
 
-> **Note.** This repository contains the main website/documentation code. If you're looking for a UI package, visit the [cagilo/ui](https://github.com/cagilo/ui) principal repository.
+> **Note.** This repository contains the main website/documentation code. If you're looking for a UI package, visit the [cagilo/cagilo](https://github.com/cagilo/cagilo) principal repository.
 
 ## Contributing
 

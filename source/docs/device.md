@@ -6,7 +6,7 @@ section: content
 
 # Device
 
-The `device` component provides a simple ability to hide or show depending on the user's device based on the User-Agent request.
+The `device` component provides a simple ability to hide or show depending on the user's device based on the [User-Agent](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent) request.
 
 ## Basic Usage
 

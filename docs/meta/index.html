@@ -114,12 +114,12 @@
 
 <pre><code class="language-html">&lt;title&gt;Hello World&lt;/title&gt;
 
-@
+&lt;!-- Primary Meta Tags --&gt;
 &lt;meta name="title" content="Hello World"&gt;
 &lt;meta name="description" content="Blade components are awesome!"&gt;
 
 
-@
+&lt;!-- Open Graph / Facebook --&gt;
 &lt;meta property="og:type" content="website"&gt;
 &lt;meta property="og:url" content="http://localhost"/&gt;
 &lt;meta property="og:locale" content="en"/&gt;
@@ -127,7 +127,7 @@
 &lt;meta property="og:description" content="Blade components are awesome!"&gt;
 &lt;meta property="og:image" content="http://example.com/social.jpg"&gt;
 
-@
+&lt;!--  Twitter --&gt;
 &lt;meta name="twitter:card" content="summary_large_image"/&gt;
 &lt;meta name="twitter:url" content="http://localhost"&gt;
 &lt;meta name="twitter:title" content="Hello World"&gt;
@@ -139,7 +139,7 @@
 
 <p>And lastly the <code>twitter:card</code> value can be adjusted through the <code>card</code> attribute. If your image is square you'd probably want to set this to <code>summary</code> instead:</p>
 
-<pre><code class="language-html">&lt;x-social-meta
+<pre><code class="language-html">&lt;x-meta
     title="Hello World"
     card="summary"
     description="Blade components are awesome!"

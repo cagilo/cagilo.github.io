@@ -5,7 +5,7 @@ use Illuminate\Support\Str;
 return [
     'baseUrl' => '',
     'production' => false,
-    'siteName' => 'Cagilo UI',
+    'siteName' => 'Cagilo Blade components',
     'siteDescription' => 'A set of open-source Blade components for the Laravel Framework',
 
     // navigation menu

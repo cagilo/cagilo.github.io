@@ -1,11 +1,12 @@
 <?php
 
 return [
-    'Home'    => '/',
+    'Home'         => '/',
     'Installation' => '/docs/installation',
-    'Alert'   => '/docs/alert',
-    'Device'  => '/docs/device',
-    'Error'   => '/docs/error',
-    'Logout'  => '/docs/logout',
-    'Meta'    => '/docs/meta',
+    'Alert'        => '/docs/alert',
+    'Device'       => '/docs/device',
+    'Error'        => '/docs/error',
+    'Icon'         => '/docs/icon',
+    'Logout'       => '/docs/logout',
+    'Meta'         => '/docs/meta',
 ];

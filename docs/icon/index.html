@@ -7,19 +7,19 @@
     <meta name="description" content="A set of open-source Blade components for the Laravel Framework">
 
     <meta property="og:site_name" content="Cagilo UI"/>
-    <meta property="og:title" content="Meta | Cagilo UI"/>
+    <meta property="og:title" content="Icon | Cagilo UI"/>
     <meta property="og:description" content="A set of open-source Blade components for the Laravel Framework"/>
-    <meta property="og:url" content="https://cagilo.github.io/docs/meta"/>
+    <meta property="og:url" content="https://cagilo.github.io/docs/icon"/>
     <meta property="og:image" content="/assets/img/logo.png"/>
     <meta property="og:type" content="website"/>
 
-    <link rel="canonical" href="https://cagilo.github.io/docs/meta">
+    <link rel="canonical" href="https://cagilo.github.io/docs/icon">
 
     <meta name="twitter:image:alt" content="Cagilo UI">
     <meta name="twitter:card" content="summary_large_image">
 
     
-    <title>Meta | Cagilo UI</title>
+    <title>Icon | Cagilo UI</title>
 
     <link rel="home" href="https://cagilo.github.io">
     <link rel="icon" href="/favicon.ico">
@@ -72,7 +72,7 @@
                         </a>
                     </li>
                                     <li class="nav-item mx-auto">
-                        <a href="/docs/icon" class="nav-link link-secondary ">
+                        <a href="/docs/icon" class="nav-link link-secondary text-gradient">
                             Icon
                         </a>
                     </li>
@@ -82,7 +82,7 @@
                         </a>
                     </li>
                                     <li class="nav-item mx-auto">
-                        <a href="/docs/meta" class="nav-link link-secondary text-gradient">
+                        <a href="/docs/meta" class="nav-link link-secondary ">
                             Meta
                         </a>
                     </li>
@@ -100,56 +100,38 @@
         <div class="container">
 
             <main class="content py-5">
-                <h1>Meta</h1>
+                <h1>Icon</h1>
 
-<p>The <code>meta</code> component allows you to set several <code>og</code> and <code>meta</code> elements used by social media to provide previews of your website when sharing it.</p>
+<p>This component is still in development.</p>
 
-<h2>Basic Usage</h2>
+<h2>Base Usage</h2>
 
-<p>The most basic usage of the component requires setting three attributes, <code>title</code>, <code>description</code>, and <code>image</code>:</p>
+<p>Register a directory with your files in the config:</p>
 
-<pre><code class="language-html">&lt;x-meta
-    title="Hello World"
-    description="Blade components are awesome!"
-    image="http://example.com/social.jpg"
-/&gt;
+<pre><code class="language-php">'icons' =&gt; [
+    'fa'  =&gt; storage_path('app/fontawesome'),
+],
 </code></pre>
 
-<p>This will output the following HTML:</p>
+<p>When calling the directory method with the first argument, we pass the prefix to call our icons and the second directory where they are located.</p>
 
-<pre><code class="language-html">&lt;title&gt;Hello World&lt;/title&gt;
+<p>After that, we can call the component in our blade templates:</p>
 
-&lt;!-- Primary Meta Tags --&gt;
-&lt;meta name="title" content="Hello World"&gt;
-&lt;meta name="description" content="Blade components are awesome!"&gt;
-
-
-&lt;!-- Open Graph / Facebook --&gt;
-&lt;meta property="og:type" content="website"&gt;
-&lt;meta property="og:url" content="http://localhost"/&gt;
-&lt;meta property="og:locale" content="en"/&gt;
-&lt;meta property="og:title" content="Hello World"/&gt;
-&lt;meta property="og:description" content="Blade components are awesome!"&gt;
-&lt;meta property="og:image" content="http://example.com/social.jpg"&gt;
-
-&lt;!--  Twitter --&gt;
-&lt;meta name="twitter:card" content="summary_large_image"/&gt;
-&lt;meta name="twitter:url" content="http://localhost"&gt;
-&lt;meta name="twitter:title" content="Hello World"&gt;
-&lt;meta name="twitter:description" content="Blade components are awesome!"&gt;
-&lt;meta name="twitter:image" content="http://example.com/social.jpg"&gt;
+<pre><code class="language-blade">&lt;x-icon path="fa.home" /&gt;
 </code></pre>
 
-<p>As you can see several <code>og</code> and <code>meta</code> elements are set. Some are set automatically. The <code>og:url</code> will make use of the current page url unless you explicitely pass an url with the <code>url</code> attribute. The <code>og:locale</code> will make use of the app's locale. By default, <code>og:type</code> will be set at <code>website</code> but you can pass in another value if you like through the <code>type</code> attribute.</p>
+<p>If you use one or two sets of icons that do not repeat, then it is not necessary to specify a prefix in the component:</p>
 
-<p>And lastly the <code>twitter:card</code> value can be adjusted through the <code>card</code> attribute. If your image is square you'd probably want to set this to <code>summary</code> instead:</p>
+<pre><code class="language-blade">&lt;x-icon path="home" /&gt;
+</code></pre>
 
-<pre><code class="language-html">&lt;x-meta
-    title="Hello World"
-    card="summary"
-    description="Blade components are awesome!"
-    image="http://example.com/social.jpg"
-/&gt;
+<p>You can also list some attributes that should be applied to your icon:</p>
+
+<pre><code class="language-blade">&lt;x-icon 
+    path="home" 
+    class="icon-big" 
+    width="2em" 
+    height="2em" /&gt;
 </code></pre>
             </main>
 

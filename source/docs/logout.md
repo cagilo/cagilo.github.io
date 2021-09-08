@@ -15,19 +15,19 @@ request. Therefor a `POST` request is better suited. And thus it deserves its ow
 The most basic usage of the component is as a self-closed tag:
 
 ```html
-<x-logout class="link-dark"/>
+<x-logout/>
 ```
 
 This will output the following HTML:
 
 ```html
-<form method="POST" action="http://localhost/logout">
+<form method="POST" action="http://localhost/logout" id="logout" style="display: none">
   <input type="hidden" name="_token" value="...">
-
-  <button type="submit" class="link-dark">
-    Log out
-  </button>
 </form>
+
+<button form="logout" type="submit">
+  Log out
+</button>
 ```
 
 As you can see, the component renders a form to a logout route. It makes use of the named `logout` route of your app by
@@ -45,7 +45,7 @@ translation helper so you can easily translate the label.
 Adjusting either the route or button label can be done by setting the `action` attribute and the slot:
 
 ```html
-<x-logout :action="route('custom-logout')" class="link-dark">
+<x-logout :action="custom-logout" class="link-dark" formId="sign-out">
   Sign Out
 </x-logout>
 ```
@@ -53,13 +53,13 @@ Adjusting either the route or button label can be done by setting the `action` a
 This will output the following HTML:
 
 ```html
-<form method="POST" action="http://localhost/custom-logout">
+<form method="POST" action="http://localhost/custom-logout" id="sign-out" style="display: none">
   <input type="hidden" name="_token" value="...">
-
-  <button type="submit" class="link-dark">
-    Sign Out
-  </button>
 </form>
+
+<button form="sign-out" type="submit" class="link-dark">
+  Log out
+</button>
 ```
 
 **Note** that when using the slot, the `__()` translation helper isn't applied anymore. This gives you full control over the slotted content should you want to for example, incorporate an icon.

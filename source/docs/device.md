@@ -33,3 +33,18 @@ Enable for all devices:
     <h1>Hello Word</h1>
 </x-device>
 ```
+
+## Nested Components
+
+When other components are inside a device component, for example:
+
+```html
+<x-device desktop="true">
+    <x-timeline/>
+    <x-posts/>
+    <x-banner/>
+</x-device>
+```
+
+Then they will not be called when visiting the site using a mobile device. This allows hiding elements and not performing the operations specified in these components, for example, accessing the database.
+

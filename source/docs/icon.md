@@ -53,5 +53,7 @@ You can also list some attributes that should be applied to your icon:
 This will output the following HTML:
 
 ```html
-<svg class="icon-big" width="2em" height="2em" role="img" fill="currentColor">...</svg>
+<svg class="icon-big" width="2em" height="2em" role="img" fill="currentColor">
+    ...
+</svg>
 ```

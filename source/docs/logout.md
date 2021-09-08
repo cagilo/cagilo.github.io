@@ -21,7 +21,7 @@ The most basic usage of the component is as a self-closed tag:
 This will output the following HTML:
 
 ```html
-<form method="POST" action="http://localhost/logout" id="logout" style="display: none">
+<form method="POST" action="http://localhost/logout" id="logout">
   <input type="hidden" name="_token" value="...">
 </form>
 
@@ -53,7 +53,7 @@ Adjusting either the route or button label can be done by setting the `action` a
 This will output the following HTML:
 
 ```html
-<form method="POST" action="http://localhost/custom-logout" id="sign-out" style="display: none">
+<form method="POST" action="http://localhost/custom-logout" id="sign-out">
   <input type="hidden" name="_token" value="...">
 </form>
 

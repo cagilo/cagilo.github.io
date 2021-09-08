@@ -126,6 +126,19 @@
     &lt;h1&gt;Hello Word&lt;/h1&gt;
 &lt;/x-device&gt;
 </code></pre>
+
+<h2>Nested Components</h2>
+
+<p>When other components are inside a device component, for example:</p>
+
+<pre><code class="language-html">&lt;x-device desktop="true"&gt;
+    &lt;x-timeline/&gt;
+    &lt;x-posts/&gt;
+    &lt;x-banner/&gt;
+&lt;/x-device&gt;
+</code></pre>
+
+<p>Then they will not be called when visiting the site using a mobile device. This allows hiding elements and not performing the operations specified in these components, for example, accessing the database.</p>
             </main>
 
 

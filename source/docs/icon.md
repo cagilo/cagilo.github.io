@@ -23,19 +23,19 @@ A string is used as a key that will allow an explicit reference to this set. The
 
 After that, we can call the component in our blade templates:
 
-```blade
+```html
 <x-icon path="fa.home" />
 ```
 
 If you use one or two sets of icons that do not repeat, then it is not necessary to specify a prefix in the component:
 
-```blade
+```html
 <x-icon path="home" />
 ```
 
 You can also list some attributes that should be applied to your icon:
 
-```blade
+```html
 <x-icon 
     path="home" 
     class="icon-big" 

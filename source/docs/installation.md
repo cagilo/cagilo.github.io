@@ -22,7 +22,7 @@ php artisan vendor:publish --tag=cagilo
 
 ### Components
 
-Even though all components come enabled out-of-the-box, you may want to load only the components you need in your app for performance reasons. To do so, first [publish the config file](/docs/{{version}}/installation#configuration), then remove the components you don't need from the `components` settings.
+Even though all components come enabled out-of-the-box, you may want to load only the components you need in your app for performance reasons. To do so, first publish the config file, then remove the components you don't need from the `components` settings.
 
 You can also choose to use different names for components. Simply adjust the name for a component and reference it with a new name. For example, let's rename the `alert` component to `notice`:
 

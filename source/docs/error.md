@@ -6,7 +6,7 @@ section: content
 
 # Error
 
-The `error` component provides an easy way to work with Laravel's `$error` message bag in its Blade views. You can use it to display (multiple) error messages for form fields.
+The `error` component provides an easy way to work with Laravel's `$error` [message bag](https://laravel.com/docs/validation) in its Blade views. You can use it to display (multiple) error messages for form fields.
 
 
 ## Basic Usage

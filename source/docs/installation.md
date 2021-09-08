@@ -6,7 +6,7 @@ section: content
 
 # Getting Started
 
-Cagilo is distributed through the [Composer](https://getcomposer.org/) package manager and automatically registers components in your application. To install, you need to run the following command in your Laravel project:
+**Cagilo** is distributed through the [Composer](https://getcomposer.org/) package manager and automatically registers components in your application. To install, you need to run the following command in your Laravel project:
 
 ```bash
 composer require cagilo/cagilo

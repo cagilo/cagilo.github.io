@@ -6,7 +6,7 @@ section: content
 
 # Icon
 
-This component is still in development.
+The `icon` component provides an easy way to insert inline  SVG files.
 
 ## Base Usage
 
@@ -18,7 +18,8 @@ Register a directory with your files in the config:
 ],
 ```
 
-When calling the directory method with the first argument, we pass the prefix to call our icons and the second directory where they are located.
+A string is used as a key that will allow an explicit reference to this set. The value is the path to the directory where the files are located.
+
 
 After that, we can call the component in our blade templates:
 

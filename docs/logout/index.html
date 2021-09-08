@@ -110,18 +110,18 @@ request. Therefor a <code>POST</code> request is better suited. And thus it dese
 
 <p>The most basic usage of the component is as a self-closed tag:</p>
 
-<pre><code class="language-html">&lt;x-logout class="link-dark"/&gt;
+<pre><code class="language-html">&lt;x-logout/&gt;
 </code></pre>
 
 <p>This will output the following HTML:</p>
 
-<pre><code class="language-html">&lt;form method="POST" action="http://localhost/logout"&gt;
+<pre><code class="language-html">&lt;form method="POST" action="http://localhost/logout" id="logout" style="display: none"&gt;
   &lt;input type="hidden" name="_token" value="..."&gt;
-
-  &lt;button type="submit" class="link-dark"&gt;
-    Log out
-  &lt;/button&gt;
 &lt;/form&gt;
+
+&lt;button form="logout" type="submit"&gt;
+  Log out
+&lt;/button&gt;
 </code></pre>
 
 <p>As you can see, the component renders a form to a logout route. It makes use of the named <code>logout</code> route of your app by
@@ -137,20 +137,20 @@ translation helper so you can easily translate the label.</p>
 
 <p>Adjusting either the route or button label can be done by setting the <code>action</code> attribute and the slot:</p>
 
-<pre><code class="language-html">&lt;x-logout :action="route('custom-logout')" class="link-dark"&gt;
+<pre><code class="language-html">&lt;x-logout :action="custom-logout" class="link-dark" formId="sign-out"&gt;
   Sign Out
 &lt;/x-logout&gt;
 </code></pre>
 
 <p>This will output the following HTML:</p>
 
-<pre><code class="language-html">&lt;form method="POST" action="http://localhost/custom-logout"&gt;
+<pre><code class="language-html">&lt;form method="POST" action="http://localhost/custom-logout" id="sign-out" style="display: none"&gt;
   &lt;input type="hidden" name="_token" value="..."&gt;
-
-  &lt;button type="submit" class="link-dark"&gt;
-    Sign Out
-  &lt;/button&gt;
 &lt;/form&gt;
+
+&lt;button form="sign-out" type="submit" class="link-dark"&gt;
+  Log out
+&lt;/button&gt;
 </code></pre>
 
 <p><strong>Note</strong> that when using the slot, the <code>__()</code> translation helper isn't applied anymore. This gives you full control over the slotted content should you want to for example, incorporate an icon.</p>

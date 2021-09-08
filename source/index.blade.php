@@ -33,7 +33,7 @@
 
     <section class="position-relative">
         <div class="container">
-            <h2 class="display-5 fw-bold text-center my-5 pt-5">Features</h2>
+            <h2 class="display-5 fw-bold text-center my-5 pt-5">The Convenience You Love</h2>
 
             <div class="row g-5 row-cols-1 row-cols-lg-3 my-md-5 text-center">
                 <div class="feature col">
@@ -42,7 +42,7 @@
                     </div>
                     <h2 class="my-3">Without Obesity</h2>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet, sapien, netus a purus ultrices.
+                        Don't require a framework for frontend or CSS/JS resources.
                     </p>
                 </div>
                 <div class="feature col">
@@ -51,7 +51,7 @@
                     </div>
                     <h2 class="my-3">Laravel Blade</h2>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet, sapien, netus a purus ultrices.
+                        Components with the expected elegance for any project.
                     </p>
                 </div>
                 <div class="feature col">
@@ -60,7 +60,7 @@
                     </div>
                     <h2 class="my-3">Open Source</h2>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet, sapien, netus a purus ultrices.
+                        Free and Open Source for personal and commercial purposes.
                     </p>
                 </div>
             </div>
@@ -71,6 +71,7 @@
         </div>
     </section>
 
+    {{--
     <section class="position-relative">
         <div class="container">
             <div class="alert border-0 shadow-lg p-5 rounded my-5" role="alert"
@@ -102,5 +103,6 @@
             </div>
         </div>
     </section>
+    --}}
 
 @endsection

@@ -151,6 +151,22 @@
     image="http://example.com/social.jpg"
 /&gt;
 </code></pre>
+
+<h2>Dynamic parameters</h2>
+
+<p>Most likely, if you previously passed parameters to your tags using <code>yield</code>, for example:</p>
+
+<pre><code class="language-html">&lt;title&gt;@yield('title', 'Home') - App Name&lt;/title&gt;
+&lt;meta name="description" content="@yield('description')"&gt;
+</code></pre>
+
+<p>The directive is not suitable for using this approach. Don't worry. You just need to change the passing string to:</p>
+
+<pre><code class="language-html">&lt;x-meta
+    title="{{ View::getSection('title') }} - App Name"
+    description="{{ View::getSection('description') }}"
+/&gt;
+</code></pre>
             </main>
 
 

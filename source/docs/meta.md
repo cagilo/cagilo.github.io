@@ -59,3 +59,23 @@ And lastly the `twitter:card` value can be adjusted through the `card` attribute
     image="http://example.com/social.jpg"
 />
 ```
+
+
+## Dynamic parameters
+
+Most likely, if you previously passed parameters to your tags using `yield`, for example:
+
+```html
+<title>@yield('title', 'Home') - App Name</title>
+<meta name="description" content="@yield('description')">
+```
+
+The directive is not suitable for using this approach. Don't worry. You just need to change the passing string to:
+
+```html
+<x-meta
+    title="{{ View::getSection('title') }} - App Name"
+    description="{{ View::getSection('description') }}"
+/>
+```
+

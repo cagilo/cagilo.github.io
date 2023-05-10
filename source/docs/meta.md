@@ -60,6 +60,24 @@ And lastly the `twitter:card` value can be adjusted through the `card` attribute
 />
 ```
 
+## Content-Security-Policy
+
+A Content-Security-Policy is an HTTP header that adds an extra layer of security to a website. It is used to protect users from Cross Site Scripting and Data Injection attacks.
+
+```html
+<x-meta
+    csp="https://example.com https://other.example.com"
+/>
+```
+
+This will output the following HTML:
+
+```html
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: 'unsafe-inline' 'unsafe-hashes' 'unsafe-eval' https://example.com https://other.example.com">
+```
+
+To simplify this tool and make it easy to use, some used and advanced features have been omitted.
+If you have a need for these advanced features, you probably already know about it.
 
 ## Dynamic parameters
 

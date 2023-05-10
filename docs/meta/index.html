@@ -49,7 +49,7 @@
             <noscript><div><img src="https://mc.yandex.ru/watch/85920285" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
         <!-- /Yandex.Metrika counter -->
     
-    <link rel="stylesheet" href="/assets/build/css/app.css?id=19ad8e0f8940acb7b5bd">
+    <link rel="stylesheet" href="/assets/build/css/app.css?id=d546db583c2dc73c6e693aa8f7dbe12d">
 </head>
 
 
@@ -166,6 +166,23 @@
 /&gt;
 </code></pre>
 
+<h2>Content-Security-Policy</h2>
+
+<p>A Content-Security-Policy is an HTTP header that adds an extra layer of security to a website. It is used to protect users from Cross Site Scripting and Data Injection attacks.</p>
+
+<pre><code class="language-html">&lt;x-meta
+    csp="https://example.com https://other.example.com"
+/&gt;
+</code></pre>
+
+<p>This will output the following HTML:</p>
+
+<pre><code class="language-html">&lt;meta http-equiv="Content-Security-Policy" content="default-src 'self' data: 'unsafe-inline' 'unsafe-hashes' 'unsafe-eval' https://example.com https://other.example.com"&gt;
+</code></pre>
+
+<p>To simplify this tool and make it easy to use, some used and advanced features have been omitted.
+If you have a need for these advanced features, you probably already know about it.</p>
+
 <h2>Dynamic parameters</h2>
 
 <p>Most likely, if you previously passed parameters to your tags using <code>yield</code>, for example:</p>
@@ -207,7 +224,7 @@
 </footer>
 
 
-<script src="/assets/build/js/main.js?id=2b7ef31469cddae4e70a"></script>
+<script src="/assets/build/js/main.js?id=55f4fde8553e9bc83496883823dc4456"></script>
 </body>
 
 </html>

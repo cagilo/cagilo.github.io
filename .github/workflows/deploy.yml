@@ -27,6 +27,7 @@ jobs:
           composer update
           composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
           npm install
+          npm update
           npm run prod
 
       - name: Deploy 🚀

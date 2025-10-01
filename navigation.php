@@ -7,7 +7,7 @@ return [
     'Device'       => '/docs/device',
     'Error'        => '/docs/error',
     'Icon'         => '/docs/icon',
-    'Logout'       => '/docs/logout',
+    'Submit'       => '/docs/submit',
     'Meta'         => '/docs/meta',
     'Time'         => '/docs/time',
 ];

@@ -13,7 +13,7 @@ You can pass a `Carbon` or `DateTime` object (or a date string), optionally spec
 
 The simplest usage is to pass a date:
 
-```blade
+```html
 <x-time date="2018-07-07" />
 ```
 
@@ -27,7 +27,7 @@ This will generate:
 
 If you need the output to be displayed in a specific format, you can use the `format` attribute:
 
-```blade
+```html
 <x-time date="2018-07-07" format="Y.m.d" />
 ```
 
@@ -41,7 +41,7 @@ This will generate:
 
 You can also pass `Carbon` or `DateTime` objects directly:
 
-```blade
+```html
 @php
     $date = \Carbon\Carbon::create(2025, 10, 1, 14, 30);
 @endphp

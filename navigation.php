@@ -9,4 +9,5 @@ return [
     'Icon'         => '/docs/icon',
     'Logout'       => '/docs/logout',
     'Meta'         => '/docs/meta',
+    'Time'         => '/docs/time',
 ];

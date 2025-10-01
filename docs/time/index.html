@@ -7,19 +7,19 @@
     <meta name="description" content="A set of open-source Blade components for the Laravel Framework">
 
     <meta property="og:site_name" content="Cagilo Blade components"/>
-    <meta property="og:title" content="Logout | Cagilo Blade components"/>
+    <meta property="og:title" content="Time | Cagilo Blade components"/>
     <meta property="og:description" content="A set of open-source Blade components for the Laravel Framework"/>
-    <meta property="og:url" content="https://cagilo.github.io/docs/logout"/>
+    <meta property="og:url" content="https://cagilo.github.io/docs/time"/>
     <meta property="og:image" content="/assets/img/logo.png"/>
     <meta property="og:type" content="website"/>
 
-    <link rel="canonical" href="https://cagilo.github.io/docs/logout">
+    <link rel="canonical" href="https://cagilo.github.io/docs/time">
 
     <meta name="twitter:image:alt" content="Cagilo Blade components">
     <meta name="twitter:card" content="summary_large_image">
 
     
-    <title>Logout | Cagilo Blade components</title>
+    <title>Time | Cagilo Blade components</title>
 
     <link rel="home" href="https://cagilo.github.io">
     <link rel="icon" href="/favicon.ico">
@@ -91,7 +91,7 @@
                         </a>
                     </li>
                                     <li class="nav-item mx-auto">
-                        <a href="/docs/logout" class="nav-link link-secondary text-gradient">
+                        <a href="/docs/logout" class="nav-link link-secondary ">
                             Logout
                         </a>
                     </li>
@@ -101,7 +101,7 @@
                         </a>
                     </li>
                                     <li class="nav-item mx-auto">
-                        <a href="/docs/time" class="nav-link link-secondary ">
+                        <a href="/docs/time" class="nav-link link-secondary text-gradient">
                             Time
                         </a>
                     </li>
@@ -119,60 +119,51 @@
         <div class="container">
 
             <main class="content py-5">
-                <h1>Logout</h1>
+                <h1>Time</h1>
 
-<p>The <code>logout</code> component is a small convenience component for a widely used concept in an app, the logout link. Often this
-action sits in a menu item with other hyperlinks. But a logout is meant as an actionable link rather than a <code>GET</code>
-request. Therefor a <code>POST</code> request is better suited. And thus it deserves its own component.</p>
+<p>The <code>time</code> component provides an easy way to render HTML <code>&lt;time&gt;</code> elements with a proper <code>datetime</code> attribute. 
+You can pass a <code>Carbon</code> or <code>DateTime</code> object (or a date string), optionally specify a format, and the component will handle rendering the correct HTML.</p>
 
 <h2>Basic Usage</h2>
 
-<p>The most basic usage of the component is as a self-closed tag:</p>
+<p>The simplest usage is to pass a date:</p>
 
-<pre><code class="language-html">&lt;x-logout/&gt;
+<pre><code class="language-blade">&lt;x-time date="2018-07-07" /&gt;
+````
+
+This will generate:
+
+```html
+&lt;time datetime="2018-07-07T00:00:00"&gt;2018-07-07&lt;/time&gt;
 </code></pre>
 
-<p>This will output the following HTML:</p>
+<h2>Using a Custom Format</h2>
 
-<pre><code class="language-html">&lt;form method="POST" action="http://localhost/logout" id="logout"&gt;
-  &lt;input type="hidden" name="_token" value="..."&gt;
-&lt;/form&gt;
+<p>If you need the output to be displayed in a specific format, you can use the <code>format</code> attribute:</p>
 
-&lt;button form="logout" type="submit"&gt;
-  Log out
-&lt;/button&gt;
+<pre><code class="language-blade">&lt;x-time date="2018-07-07" format="Y.m.d" /&gt;
 </code></pre>
 
-<p>As you can see, the component renders a form to a logout route. It makes use of the named <code>logout</code> route of your app by
-default so make sure you've defined this in your app:</p>
+<p>This will generate:</p>
 
-<pre><code class="language-php">Route::post('/logout', 'AuthController@logout');
+<pre><code class="language-html">&lt;time datetime="2018-07-07T00:00:00"&gt;2018.07.07&lt;/time&gt;
 </code></pre>
 
-<p>You might also notice it automatically sets the button label. Behind the scenes the component also uses the <code>__()</code>
-translation helper so you can easily translate the label.</p>
+<h2>Using DateTime or Carbon Objects</h2>
 
-<h2>Customizing</h2>
+<p>You can also pass <code>Carbon</code> or <code>DateTime</code> objects directly:</p>
 
-<p>Adjusting either the route or button label can be done by setting the <code>action</code> attribute and the slot:</p>
+<pre><code class="language-blade">@php
+    $date = \Carbon\Carbon::create(2025, 10, 1, 14, 30);
+@endphp
 
-<pre><code class="language-html">&lt;x-logout :action="custom-logout" class="link-dark" formId="sign-out"&gt;
-  Sign Out
-&lt;/x-logout&gt;
+&lt;x-time :date="$date" format="d M Y H:i" /&gt;
 </code></pre>
 
-<p>This will output the following HTML:</p>
+<p>Output:</p>
 
-<pre><code class="language-html">&lt;form method="POST" action="http://localhost/custom-logout" id="sign-out"&gt;
-  &lt;input type="hidden" name="_token" value="..."&gt;
-&lt;/form&gt;
-
-&lt;button form="sign-out" type="submit" class="link-dark"&gt;
-  Log out
-&lt;/button&gt;
+<pre><code class="language-html">&lt;time datetime="2025-10-01T14:30:00"&gt;01 Oct 2025 14:30&lt;/time&gt;
 </code></pre>
-
-<p><strong>Note</strong> that when using the slot, the <code>__()</code> translation helper isn't applied anymore. This gives you full control over the slotted content should you want to for example, incorporate an icon.</p>
             </main>
 
 

@@ -79,7 +79,7 @@ This will output the following HTML:
 To simplify this tool and make it easy to use, some used and advanced features have been omitted.
 If you have a need for these advanced features, you probably already know about it.
 
-## Dynamic parameters
+## Dynamic Parameters
 
 Most likely, if you previously passed parameters to your tags using `yield`, for example:
 

@@ -15,7 +15,7 @@ The simplest usage is to pass a date:
 
 ```blade
 <x-time date="2018-07-07" />
-````
+```
 
 This will generate:
 

@@ -50,7 +50,7 @@ Reference the different types using the `type` attribute on the `alert` componen
 
 These will then render all the flashed messages.
 
-## Composing The Content
+## Composing the Content
 
 If you'd like to compose how the content is rendered within the component you can make use of its slot. This is useful, for example, for adding functionality like icons or dismiss elements. You can control the position of where the message will be placed by using the component's `message` method:
 

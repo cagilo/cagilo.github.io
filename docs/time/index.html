@@ -128,7 +128,7 @@ You can pass a <code>Carbon</code> or <code>DateTime</code> object (or a date st
 
 <p>The simplest usage is to pass a date:</p>
 
-<pre><code class="language-blade">&lt;x-time date="2018-07-07" /&gt;
+<pre><code class="language-html">&lt;x-time date="2018-07-07" /&gt;
 </code></pre>
 
 <p>This will generate:</p>
@@ -140,7 +140,7 @@ You can pass a <code>Carbon</code> or <code>DateTime</code> object (or a date st
 
 <p>If you need the output to be displayed in a specific format, you can use the <code>format</code> attribute:</p>
 
-<pre><code class="language-blade">&lt;x-time date="2018-07-07" format="Y.m.d" /&gt;
+<pre><code class="language-html">&lt;x-time date="2018-07-07" format="Y.m.d" /&gt;
 </code></pre>
 
 <p>This will generate:</p>
@@ -152,7 +152,7 @@ You can pass a <code>Carbon</code> or <code>DateTime</code> object (or a date st
 
 <p>You can also pass <code>Carbon</code> or <code>DateTime</code> objects directly:</p>
 
-<pre><code class="language-blade">@php
+<pre><code class="language-html">@php
     $date = \Carbon\Carbon::create(2025, 10, 1, 14, 30);
 @endphp
 
